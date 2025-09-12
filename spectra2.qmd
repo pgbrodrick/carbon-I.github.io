@@ -30,7 +30,8 @@ Carbon-I mission is designed as a wide-swath mapping mission, collecting shortwa
 ::::
 :::::
 ::::: {.spectra-plots}
-:::: {.container .py-3}
+::: {.grid .py-3}
+
 ```{ojs}
 import { rangeSlider as rangeSlider } from '@mootari/range-slider'
 ```
@@ -39,10 +40,31 @@ import { rangeSlider as rangeSlider } from '@mootari/range-slider'
 rawData =  FileAttachment("data/rfl_lowpass_shaped_v2.csv").csv({typed: true});
 ```
 
-::: {.grid .py-1 .justify-content-center}
-::: {.g-col-6}
+::: {.g-col-12 .samples-filter}
 ```{ojs}
+viewof categorySel = Inputs.checkbox(categories, {
+  label: "Sample Categories", 
+  value: ["Minerals"]}
+);
+sampleOptions = Array.from(categoryLookup.keys()).filter(
+  s => samples.includes(s) && categorySel.includes(categoryLookup.get(s).category)
+);
+```
 
+```{ojs}
+viewof sampleSel = Inputs.checkbox(sampleOptions, { value: sampleOptions });
+viewof samplePanel = categorySel.length
+  ? html`<details class="sample-drop" open>
+           <summary style="color:#000;">Samples</summary>
+           ${viewof sampleSel}
+         </details>`
+  : html``;
+```
+:::
+
+::: {.g-col-3 .px-5 .controls}
+
+```{ojs}
 fmt = d3.format(".2f");
 
 viewof slider = rangeSlider({
@@ -59,15 +81,21 @@ maxWL = slider[1];
 xMin = d3.min(rawData, d => d.wavelength);
 xMax = d3.max(rawData, d => d.wavelength);
 ```
-:::
-::: {.g-col-4}
+
 ```{ojs}
 viewof normalize = Inputs.toggle({
   label: "Normalize 0-1 (per sample)",
   value: false
 })
 ```
-:::
+
+```{ojs}
+viewof resolutionSel = Inputs.range([0.7, 15.4], {step: 0.7, value: 0.7, label: "Resolution (nm)"})
+```
+
+```{ojs}
+viewof windowSel = Inputs.range([1, 15], {step: 1, value: 1, label: "Spectral Averaging Window"})
+```
 
 ```{ojs}
 categoryLookup = new Map([
@@ -101,45 +129,9 @@ categorizedData = rawData.map(d => {
   };
 });
 
-// wrapping data in set removes duplicates
 categories = Array.from(new Set(categorizedData.map(d => d.category)));
 ```
 
-::: {.g-col-6}
-```{ojs}
-viewof categorySel = Inputs.checkbox(categories, {
-  label: "Sample Categories", 
-  value: ["Minerals"]}
-);
-sampleOptions = Array.from(categoryLookup.keys()).filter(
-  s => samples.includes(s) && categorySel.includes(categoryLookup.get(s).category)
-);
-```
-:::
-::: {.g-col-6}
-```{ojs}
-viewof sampleSel = Inputs.checkbox(sampleOptions, {
-  value: sampleOptions 
-});
-viewof samplePanel = categorySel.length
-  ? html`<details class="sample-drop" open>
-           <summary style="color:#000;">Samples</summary>
-           ${viewof sampleSel}
-         </details>`
-  : html``;
-```
-:::
-::: {.g-col-6}
-```{ojs}
-viewof resolutionSel = Inputs.range([0.7, 15.4], {step: 0.7, value: 0.7, label: "Resolution (nm)"})
-```
-:::
-::: {.g-col-6}
-```{ojs}
-viewof windowSel = Inputs.range([1, 15], {step: 1, value: 1, label: "Spectral Averaging Window"})
-```
-:::
-:::
 ```{ojs}
 filteredData = categorizedData.filter(
   d => d.wavelength >= minWL && 
@@ -149,27 +141,23 @@ filteredData = categorizedData.filter(
 );
 ```
 
-
 ```{ojs}
 plotWidth = Math.min(width, 1800);
 uiPx = Math.max(14, Math.round(plotWidth / 55));
 labelWidth = Math.round(Math.max(160, uiPx * 8));  
 inputWidth = Math.round(Math.max(200, uiPx * 10));
 
-//injected css style to use plotWidth variable
-html`
-<style>
-  .spectra-plots {
-    --label-fs: ${uiPx * 0.8}px;
-  }
+html`<style>
+  .spectra-plots { --label-fs: ${uiPx * 0.8}px; }
   .spectra-plots form[class^="oi-"]{
     --label-width: ${labelWidth}px !important;
     --input-width: ${inputWidth}px !important;
   }
 </style>`
-
 ```
 
+:::
+::: {.g-col-9}
 ```{ojs}
 {
   if (filteredData.length < 1) {
@@ -230,14 +218,12 @@ html`
     marginRight: 275,
     marginLeft: 75,   
     marginTop: 45,   
-    marginBottom: 85,
+    marginBottom: 40,
 
     x: {
       label: xLabel,
       tickPadding: 10,
-      tickRotate: rotate,  
-      labelAnchor: "center",     
-      labelOffset: 60,
+      tickRotate: rotate,
       domain: [minWL, maxWL],                                         
       ticks: d3.range(xTickStart, xTickEnd + 1, 30),
       tickFormat: d3.format("d")                                    
@@ -307,12 +293,12 @@ html`
   });
   const swatches = p.querySelector('div[class*="-swatches-wrap"], div[class*="-swatches"], .plot-swatches');
   if (swatches) {
-    swatches.style.fontSize = `${fontPx * 0.85}px`;   
+    swatches.style.fontSize = `${fontPx * 0.6}px`;   
   }
   return p;
 }
 
 ```
-::::
+:::
+:::
 :::::
-

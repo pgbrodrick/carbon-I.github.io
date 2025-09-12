@@ -1,0 +1,50 @@
+[
+  {
+    "listing": "/news.html",
+    "items": [
+      "/News/CI-TestBed.html",
+      "/News/webinar.html",
+      "/News/latimes.html",
+      "/News/Selected.html",
+      "/News/Carbon-I.html"
+    ]
+  },
+  {
+    "listing": "/team.html",
+    "items": [
+      "/people/ScienceTeam/01_frankenberg.html",
+      "/people/ScienceTeam/02_michalak.html",
+      "/people/ScienceTeam/03_jacob.html",
+      "/people/ScienceTeam/04_Yin.html",
+      "/people/ScienceTeam/16_sanghavi.html",
+      "/people/ScienceTeam/05_turner.html",
+      "/people/ScienceTeam/05_wennberg.html",
+      "/people/ScienceTeam/06_thorpe.html",
+      "/people/ScienceTeam/07_bruhwiler.html",
+      "/people/ScienceTeam/08_hoyt.html",
+      "/people/ScienceTeam/09_kebreab.html",
+      "/people/ScienceTeam/11_green.html",
+      "/people/ScienceTeam/12_thompson.html",
+      "/people/ScienceTeam/13_brodrick.html",
+      "/people/ScienceTeam/14_Chadwick.html",
+      "/people/ScienceTeam/15_baier.html",
+      "/people/Collaborators/hboesch.html",
+      "/people/Collaborators/kort.html",
+      "/people/Collaborators/Jeong.html",
+      "/people/Collaborators/ODell.html",
+      "/people/Collaborators/aben.html",
+      "/people/Collaborators/abutz.html",
+      "/people/Collaborators/ciais.html",
+      "/people/Collaborators/duren.html",
+      "/people/Collaborators/ehlmann.html",
+      "/people/Collaborators/elder.html",
+      "/people/Collaborators/elvidge.html",
+      "/people/Collaborators/hase.html",
+      "/people/Collaborators/houweling.html",
+      "/people/Collaborators/palmer.html",
+      "/people/Collaborators/roiger.html",
+      "/people/Collaborators/wunch.html",
+      "/people/Collaborators/maasakkers.html"
+    ]
+  }
+]

@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Alex Turner</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../img/ci_icon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-24ca94bd12c1253624425de1ebe59148.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/academicons-1.9.2/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/academicons-1.9.2/size.css" rel="stylesheet">
+<script src="../../site_libs/quarto-contrib/iconify-1.0.8/iconify-icon.min.js"></script>
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-PE6RLP594L"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-PE6RLP594L', { 'anonymize_ip': true});
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../../styles/custom.css">
+<meta property="og:title" content="Alex Turner">
+<meta property="og:description" content="Atmospheric Chemistry &amp; Carbon Cycle feedbacks  University of Washington">
+<meta property="og:image" content="https://carbon-i.github.io/img/people/turner.jpeg">
+<meta name="twitter:title" content="Alex Turner">
+<meta name="twitter:description" content="Atmospheric Chemistry &amp; Carbon Cycle feedbacks  University of Washington">
+<meta name="twitter:image" content="https://carbon-i.github.io/img/people/turner.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../img/Logo-White2.png" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../team.html"> 
+<span class="menu-text">Team</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../science.html"> 
+<span class="menu-text">Science</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-visual-stories" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Visual Stories</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-visual-stories">    
+        <li>
+    <a class="dropdown-item" href="../../ch4_story.html">
+ <span class="dropdown-text">CH4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../clouds.html">
+ <span class="dropdown-text">Clouds</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../spectra.html">
+ <span class="dropdown-text">Surface Spectra</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../news.html"> 
+<span class="menu-text">News</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Carbon-I/"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+<!-- main -->
+
+
+
+
+<div class="container">
+<section id="science-team-alex-turner" class="level2 listing-header">
+<h2 data-anchor-id="science-team-alex-turner"><a href="../../team.html#science-team"><strong>Science Team</strong> | <strong>Alex Turner</strong></a></h2>
+</section>
+<div class="quarto-about-solana column-body">
+  <div class="about-entity">
+    <div class="entity-contents">
+      <header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Alex Turner</h1>
+<p class="subtitle lead">Atmospheric Chemistry &amp; Carbon Cycle feedbacks <br> University of Washington</p>
+</div>
+<div class="quarto-title-meta">
+  </div>
+</header> <div class="about-links">
+  <a href="https://github.com/alexjturner/" class="about-link" rel="" target="">
+    <i class="bi bi-github"></i>
+     <span class="about-link-text">Github</span>
+  </a>
+  <a href="https://scholar.google.com/citations?user=tfmVgv0AAAAJ&amp;hl=en" class="about-link" rel="" target="">
+     <span class="about-link-text"><i class="ai  ai-google-scholar"></i> Google Scholar</span>
+  </a>
+  <a href="https://orcid.org/0000-0003-1406-7372" class="about-link" rel="" target="">
+     <span class="about-link-text"><iconify-icon inline="" icon="fa6-brands:orcid"></iconify-icon> OrcidID</span>
+  </a>
+  <a href="https://alexjturner.github.io/index.html" class="about-link" rel="" target="">
+    <i class="bi bi-mortarboard"></i>
+     <span class="about-link-text">Website</span>
+  </a>
+</div>
+      <div class="about-contents"><div id="about-heading">
+<div class="about-section">
+<p>Alex Turner is an Assistant Professor of Atmospheric Sciences at the University of Washington where he works on atmospheric chemistry and the carbon cycle.</p>
+<section id="education" class="level2">
+<h2 data-anchor-id="education">Education</h2>
+<ul>
+<li><span class="fw-bold">PhD in Atmospheric Chemistry</span> | Harvard University | 2012 - 2017</li>
+<li><span class="fw-bold">BS in Mechanical Engineering</span> | University of Colorado at Boulder | 2008 - 2012</li>
+</ul>
+</section>
+<section id="professional-experience" class="level2">
+<h2 data-anchor-id="professional-experience">Professional Experience</h2>
+<ul>
+<li><span class="fw-bold">2021 - present:</span> Assistant Professor, University of Washington</li>
+<li><span class="fw-bold">2017 - 2020:</span> Miller Postdoctoral Fellow, University of California at Berkeley</li>
+</ul>
+</section>
+</div>
+</div></div>
+    </div>
+    <img src="../../img/people/turner.jpeg" class="about-image
+  round " style="height: 15em; width: 15em;">
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+<!-- Navbar Scale Animation-->
+
+<script>
+
+    const nav = document.querySelector('.navbar');
+
+    
+
+    window.addEventListener('scroll', () => {
+
+      if (window.scrollY > 10) {
+
+        nav.classList.add('compact');
+
+      } else {
+
+        nav.classList.remove('compact');
+
+      }
+
+    });
+
+</script>
+
+
+
+<!-- For About Page Layout-->
+
+<script>
+
+  document.addEventListener("DOMContentLoaded", () => {
+
+    const titleBlock = document.querySelector(".quarto-title-block");
+
+    const image = document.querySelector(".about-image");
+
+
+
+    const title = document.querySelector('.quarto-title');
+
+    const logos = document.querySelector('.about-links');
+
+
+
+    //place images into titleBlock area
+
+    if (titleBlock && image) {
+
+    titleBlock.insertBefore(image, titleBlock.firstChild);
+
+    }
+
+
+
+    //place logos into title area
+
+    if (title && logos) {
+
+    title.appendChild(logos);
+
+    }
+
+  });
+
+</script>
+
+
+
+<!-- Only add references if there is a bibliography-->
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const refs = document.getElementById("refs");
+
+      if (!refs) return;
+
+    
+
+      document.querySelectorAll('#quarto-appendix').forEach(el => el.remove());
+
+
+
+      const wrapper = document.createElement("div");
+
+      wrapper.className = "references-wrapper";
+
+    
+
+      const container = document.createElement("div");
+
+      container.className = "container about-references";
+
+    
+
+      const heading = document.createElement("h1");
+
+      heading.textContent = "References";
+
+    
+
+      container.appendChild(heading);
+
+      container.appendChild(refs);
+
+      wrapper.appendChild(container);
+
+    
+
+      const footerBanner = document.querySelector(".footer");
+
+      if (footerBanner && footerBanner.parentNode) {
+
+        footerBanner.parentNode.insertBefore(wrapper, footerBanner);
+
+      } else {
+
+        document.body.appendChild(wrapper);
+
+      }
+
+    });
+
+</script>
+
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/carbon-i\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-WOS:000395118000003" class="csl-entry" role="listitem">
+Bader, W., Bovy, B., Conway, S., Strong, K., Smale, D., Turner, A. J., et al. (2017). The recent increase of atmospheric methane from 10 years of ground-based NDACC FTIR observations since 2005. <em>ATMOSPHERIC CHEMISTRY AND PHYSICS</em>, <em>17</em>(3), 2255–2277. <a href="https://doi.org/10.5194/acp-17-2255-2017">https://doi.org/10.5194/acp-17-2255-2017</a>
+</div>
+<div id="ref-WOS:000402967300002" class="csl-entry" role="listitem">
+Bloom, A. A., Bowman, K. W., Lee, M., Turner, A. J., Schroeder, R., Worden, J. R., et al. (2017). A global wetland methane emissions and uncertainty dataset for atmospheric chemical transport models (WetCHARTs version 1.0). <em>GEOSCIENTIFIC MODEL DEVELOPMENT</em>, <em>10</em>(6), 2141–2156. <a href="https://doi.org/10.5194/gmd-10-2141-2017">https://doi.org/10.5194/gmd-10-2141-2017</a>
+</div>
+<div id="ref-WOS:000378354100009" class="csl-entry" role="listitem">
+Bousserez, N., Henze, D. K., Rooney, B., Perkins, A., Wecht, K. J., Turner, A. J., et al. (2016). Constraints on methane emissions in north america from future geostationary remote-sensing measurements. <em>ATMOSPHERIC CHEMISTRY AND PHYSICS</em>, <em>16</em>(10), 6175–6190. <a href="https://doi.org/10.5194/acp-16-6175-2016">https://doi.org/10.5194/acp-16-6175-2016</a>
+</div>
+<div id="ref-WOS:000425848100001" class="csl-entry" role="listitem">
+Buchwitz, M., Schneising, O., Reuter, M., Heymann, J., Krautwurst, S., Bovensmann, H., et al. (2017). Satellite-derived methane hotspot emission estimates using a fast data-driven method. <em>ATMOSPHERIC CHEMISTRY AND PHYSICS</em>, <em>17</em>(9), 5751–5774. <a href="https://doi.org/10.5194/acp-17-5751-2017">https://doi.org/10.5194/acp-17-5751-2017</a>
+</div>
+<div id="ref-WOS:000702878600010" class="csl-entry" role="listitem">
+Comer-Warner, S. A., Nguyen, A. T. Q., Nguyen, M. N., Wang, M., Turner, A., Le, H., et al. (2022). Restoration impacts on rates of denitrification and greenhouse gas fluxes from tropical coastal wetlands. <em>SCIENCE OF THE TOTAL ENVIRONMENT</em>, <em>803</em>. <a href="https://doi.org/10.1016/j.scitotenv.2021.149577">https://doi.org/10.1016/j.scitotenv.2021.149577</a>
+</div>
+<div id="ref-WOS:000451580600004" class="csl-entry" role="listitem">
+Cusworth, D. H., Jacob, D. J., Sheng, J.-X., Benmergui, J., Turner, A. J., Brandman, J., et al. (2018). Detecting high-emitting methane sources in oil/gas fields using satellite observations. <em>ATMOSPHERIC CHEMISTRY AND PHYSICS</em>, <em>18</em>(23), 16885–16896. <a href="https://doi.org/10.5194/acp-18-16885-2018">https://doi.org/10.5194/acp-18-16885-2018</a>
+</div>
+<div id="ref-WOS:000503918800011" class="csl-entry" role="listitem">
+Eldridge, D. L., Korol, R., Lloyd, M. K., Turner, A. C., Webb, M. A., Miller, T. F., III, &amp; Stolper, D. A. (2019). Comparison of experimental vs theoretical abundances of &lt;SUP&gt;13&lt;/SUP&gt;CH&lt;sub&gt;3&lt;/sub&gt;d and &lt;SUP&gt;12&lt;/SUP&gt;CH&lt;sub&gt;2&lt;/sub&gt;d&lt;sub&gt;2&lt;/sub&gt; for isotopically equilibrated systems from 1 to 500 °c. <em>ACS EARTH AND SPACE CHEMISTRY</em>, <em>3</em>(12), 2747–2764. <a href="https://doi.org/10.1021/acsearthspacechem.9b00244">https://doi.org/10.1021/acsearthspacechem.9b00244</a>
+</div>
+<div id="ref-WOS:001050456300001" class="csl-entry" role="listitem">
+Eldridge, D. L., Turner, A. C., Bill, M., Conrad, M. E., &amp; Stolper, D. A. (2023). Experimental determinations of carbon and hydrogen isotope fractionations and methane clumped isotope compositions associated with ethane pyrolysis from 550 to 600 °c. <em>GEOCHIMICA ET COSMOCHIMICA ACTA</em>, <em>355</em>, 235–265. <a href="https://doi.org/10.1016/j.gca.2023.06.006">https://doi.org/10.1016/j.gca.2023.06.006</a>
+</div>
+<div id="ref-WOS:A1994PR83200001" class="csl-entry" role="listitem">
+ERASIN, B., TURNER, A., &amp; WHEATLEY, A. (1994). A FIXED-FILM BIOASSAY FOR THE DETECTION OF MICROPOLLUTANTS TOXIC TO ANAEROBIC SLUDGES. <em>ANALYTICA CHIMICA ACTA</em>, <em>298</em>(1), 1–10. <a href="https://doi.org/10.1016/0003-2670(94)90037-X">https://doi.org/10.1016/0003-2670(94)90037-X</a>
+</div>
+<div id="ref-WOS:000818924400001" class="csl-entry" role="listitem">
+Hajny, K. D., Floerchinger, C. R., Lopez-Coto, I., Pitt, J. R., Gately, C. K., Gurney, K. R., et al. (2022). A spatially explicit inventory scaling approach to estimate urban CO&lt;sub&gt;2&lt;/sub&gt; emissions. <em>ELEMENTA-SCIENCE OF THE ANTHROPOCENE</em>, <em>10</em>(1). <a href="https://doi.org/10.1525/elementa.2021.00121">https://doi.org/10.1525/elementa.2021.00121</a>
+</div>
+<div id="ref-WOS:000387980100003" class="csl-entry" role="listitem">
+Jacob, D. J., Turner, A. J., Maasakkers, J. D., Sheng, J., Sun, K., Liu, X., et al. (2016). Satellite observations of atmospheric methane and their value for quantifying methane emissions. <em>ATMOSPHERIC CHEMISTRY AND PHYSICS</em>, <em>16</em>(22), 14371–14396. <a href="https://doi.org/10.5194/acp-16-14371-2016">https://doi.org/10.5194/acp-16-14371-2016</a>
+</div>
+<div id="ref-WOS:000722463000002" class="csl-entry" role="listitem">
+Laughner, J. L., Neu, J. L., Schimel, D., Wennberg, P. O., Barsanti, K., Bowman, K. W., et al. (2021). Societal shifts due to COVID-19 reveal large-scale complexities and feedbacks between atmospheric chemistry and climate change. <em>PROCEEDINGS OF THE NATIONAL ACADEMY OF SCIENCES OF THE UNITED STATES OF AMERICA</em>, <em>118</em>(46). <a href="https://doi.org/10.1073/pnas.2109481118">https://doi.org/10.1073/pnas.2109481118</a>
+</div>
+<div id="ref-WOS:000389557100067" class="csl-entry" role="listitem">
+Maasakkers, J. D., Jacob, D. J., Sulprizio, M. P., Turner, A. J., Weitz, M., Wirth, T., et al. (2016). Gridded national inventory of US methane emissions. <em>ENVIRONMENTAL SCIENCE &amp; TECHNOLOGY</em>, <em>50</em>(23), 13123–13133. <a href="https://doi.org/10.1021/acs.est.6b02878">https://doi.org/10.1021/acs.est.6b02878</a>
+</div>
+<div id="ref-WOS:000529107400040" class="csl-entry" role="listitem">
+Nguyen, N. H., Turner, A. J., Yin, Y., Prather, M. J., &amp; Frankenberg, C. (2020). Effects of chemical feedbacks on decadal methane emissions estimates. <em>GEOPHYSICAL RESEARCH LETTERS</em>, <em>47</em>(3). <a href="https://doi.org/10.1029/2019GL085706">https://doi.org/10.1029/2019GL085706</a>
+</div>
+<div id="ref-WOS:000256896200005" class="csl-entry" role="listitem">
+Ouwerkerk, D., Turner, A. F., &amp; Klieve, A. V. (2008). Diversity of methanogens in ruminants in queensland. <em>AUSTRALIAN JOURNAL OF EXPERIMENTAL AGRICULTURE</em>, <em>48</em>(6-7), 722–725. <a href="https://doi.org/10.1071/EA08049">https://doi.org/10.1071/EA08049</a>
+</div>
+<div id="ref-WOS:000442577800002" class="csl-entry" role="listitem">
+Sheng, J.-X., Jacob, D. J., Turner, A. J., Maasakkers, J. D., Benmergui, J., Bloom, A. A., et al. (2018). 2010-2016 methane trends over canada, the united states, and mexico observed by the GOSAT satellite: Contributions from different source sectors. <em>ATMOSPHERIC CHEMISTRY AND PHYSICS</em>, <em>18</em>(16), 12257–12267. <a href="https://doi.org/10.5194/acp-18-12257-2018">https://doi.org/10.5194/acp-18-12257-2018</a>
+</div>
+<div id="ref-WOS:000431588500006" class="csl-entry" role="listitem">
+Sheng, J.-X., Jacob, D. J., Turner, A. J., Maasakkers, J. D., Sulprizio, M. P., Bloom, A. A., et al. (2018). High-resolution inversion of methane emissions in the southeast US using SEAC&lt;SUP&gt;4&lt;/SUP&gt;RS aircraft observations of atmospheric methane: Anthropogenic and wetland sources. <em>ATMOSPHERIC CHEMISTRY AND PHYSICS</em>, <em>18</em>(9), 6483–6491. <a href="https://doi.org/10.5194/acp-18-6483-2018">https://doi.org/10.5194/acp-18-6483-2018</a>
+</div>
+<div id="ref-WOS:000179098300029" class="csl-entry" role="listitem">
+Sheth, A., &amp; Turner, A. (2002). Kinetics and economics of catalytic steam gasification of broiler litter. <em>TRANSACTIONS OF THE ASAE</em>, <em>45</em>(4), 1111–1121.
+</div>
+<div id="ref-WOS:000385403300001" class="csl-entry" role="listitem">
+Tan, Z., Zhuang, Q., Henze, D. K., Frankenberg, C., Dlugokencky, E., Sweeney, C., et al. (2016). Inverse modeling of pan-arctic methane emissions at high spatial resolution: What can we learn from assimilating satellite retrievals and using different process-based wetland and lake biogeochemical models? <em>ATMOSPHERIC CHEMISTRY AND PHYSICS</em>, <em>16</em>(19), 12649–12666. <a href="https://doi.org/10.5194/acp-16-12649-2016">https://doi.org/10.5194/acp-16-12649-2016</a>
+</div>
+<div id="ref-WOS:000324458800007" class="csl-entry" role="listitem">
+Trabue, S., Scoggin, K., McConnell, L. L., Li, H., Turner, A., Burns, R., et al. (2013). Performance of commercial nonmethane hydrocarbon analyzers in monitoring oxygenated volatile organic compounds emitted from animal feeding operations. <em>JOURNAL OF THE AIR &amp; WASTE MANAGEMENT ASSOCIATION</em>, <em>63</em>(10), 1163–1172. <a href="https://doi.org/10.1080/10962247.2013.804464">https://doi.org/10.1080/10962247.2013.804464</a>
+</div>
+<div id="ref-WOS:A19644181B00060" class="csl-entry" role="listitem">
+TURNER, A., HAUK, P., SATURNO, A., &amp; PARR, R. (1964). DESCRIPTION OF DISTRIBUTION OF ELECTRONS IN METHANE MOLECULE. <em>JOURNAL OF CHEMICAL PHYSICS</em>, <em>40</em>(7), 1919– &amp;. <a href="https://doi.org/10.1063/1.1725423">https://doi.org/10.1063/1.1725423</a>
+</div>
+<div id="ref-WOS:000710930300002" class="csl-entry" role="listitem">
+Turner, A. C., Korol, R., Eldridge, D. L., Bill, M., Conrad, M. E., Miller, T. F., III, &amp; Stolper, D. A. (2021). Experimental and theoretical determinations of hydrogen isotopic equilibrium in the system CH&lt;sub&gt;4&lt;/sub&gt;-h&lt;sub&gt;2&lt;/sub&gt;-h&lt;sub&gt;2&lt;/sub&gt;o from 3 to 200 °c. <em>GEOCHIMICA ET COSMOCHIMICA ACTA</em>, <em>314</em>, 223–269. <a href="https://doi.org/10.1016/j.gca.2021.04.026">https://doi.org/10.1016/j.gca.2021.04.026</a>
+</div>
+<div id="ref-WOS:000818523300014" class="csl-entry" role="listitem">
+Turner, A. C., Pester, N. J., Bill, M., Conrad, M. E., &amp; Knauss, K. G. (2022). Experimental determination of hydrogen isotope exchange rates between methane and water under hydrothermal conditions. <em>GEOCHIMICA ET COSMOCHIMICA ACTA</em>, <em>329</em>, 231–255. <a href="https://doi.org/10.1016/j.gca.2022.04.029">https://doi.org/10.1016/j.gca.2022.04.029</a>
+</div>
+<div id="ref-WOS:000357117500033" class="csl-entry" role="listitem">
+Turner, A. J., &amp; Jacob, D. J. (2015). Balancing aggregation and smoothing errors in inverse models. <em>ATMOSPHERIC CHEMISTRY AND PHYSICS</em>, <em>15</em>(12), 7039–7048. <a href="https://doi.org/10.5194/acp-15-7039-2015">https://doi.org/10.5194/acp-15-7039-2015</a>
+</div>
+<div id="ref-WOS:000357117500034" class="csl-entry" role="listitem">
+Turner, A. J., Jacob, D. J., Wecht, K. J., Maasakkers, J. D., Lundgren, E., Andrews, A. E., et al. (2015). Estimating global and north american methane emissions with high spatial resolution using GOSAT satellite data. <em>ATMOSPHERIC CHEMISTRY AND PHYSICS</em>, <em>15</em>(12), 7049–7069. <a href="https://doi.org/10.5194/acp-15-7049-2015">https://doi.org/10.5194/acp-15-7049-2015</a>
+</div>
+<div id="ref-WOS:000373109800053" class="csl-entry" role="listitem">
+Turner, A. J., Jacob, D. J., Benmergui, J., Wofsy, S. C., Maasakkers, J. D., Butz, A., et al. (2016). A large increase in US methane emissions over the past decade inferred from satellite data and surface observations. <em>GEOPHYSICAL RESEARCH LETTERS</em>, <em>43</em>(5), 2218–2224. <a href="https://doi.org/10.1002/2016GL067987">https://doi.org/10.1002/2016GL067987</a>
+</div>
+<div id="ref-WOS:000401797800037" class="csl-entry" role="listitem">
+Turner, Alexander J., Frankenbergb, C., Wennberg, P. O., &amp; Jacob, D. J. (2017). Ambiguity in the causes for decadal trends in atmospheric methane and hydroxyl. <em>PROCEEDINGS OF THE NATIONAL ACADEMY OF SCIENCES OF THE UNITED STATES OF AMERICA</em>, <em>114</em>(21), 5367–5372. <a href="https://doi.org/10.1073/pnas.1616020114">https://doi.org/10.1073/pnas.1616020114</a>
+</div>
+<div id="ref-WOS:000435181500006" class="csl-entry" role="listitem">
+Turner, Alexander J., Jacob, D. J., Benmergui, J., Brandman, J., White, L., &amp; Randles, C. A. (2018). Assessing the capability of different satellite observing configurations to resolve the distribution of methane emissions at kilometer scales. <em>ATMOSPHERIC CHEMISTRY AND PHYSICS</em>, <em>18</em>(11), 8265–8278. <a href="https://doi.org/10.5194/acp-18-8265-2018">https://doi.org/10.5194/acp-18-8265-2018</a>
+</div>
+<div id="ref-WOS:000443555000049" class="csl-entry" role="listitem">
+Turner, Alexander J., Fung, I., Naik, V., Horowitz, L. W., &amp; Cohen, R. C. (2018). Modulation of hydroxyl variability by ENSO in the absence of external forcing. <em>PROCEEDINGS OF THE NATIONAL ACADEMY OF SCIENCES OF THE UNITED STATES OF AMERICA</em>, <em>115</em>(36), 8931–8936. <a href="https://doi.org/10.1073/pnas.1807532115">https://doi.org/10.1073/pnas.1807532115</a>
+</div>
+<div id="ref-WOS:000459074400011" class="csl-entry" role="listitem">
+Turner, Alexander J., Frankenberg, C., &amp; Kort, E. A. (2019). Interpreting contemporary trends in atmospheric methane. <em>PROCEEDINGS OF THE NATIONAL ACADEMY OF SCIENCES OF THE UNITED STATES OF AMERICA</em>, <em>116</em>(8), 2805–2813. <a href="https://doi.org/10.1073/pnas.1814297116">https://doi.org/10.1073/pnas.1814297116</a>
+</div>
+<div id="ref-WOS:000600096800004" class="csl-entry" role="listitem">
+Turner, A. M., &amp; Kaiser, R., I. (2020). Exploiting photoionization reflectron time-of-flight mass spectrometry to explore molecular mass growth processes to complex organic molecules in interstellar and solar system ice analogs. <em>ACCOUNTS OF CHEMICAL RESEARCH</em>, <em>53</em>(12), 2791–2805. <a href="https://doi.org/10.1021/acs.accounts.0c00584">https://doi.org/10.1021/acs.accounts.0c00584</a>
+</div>
+<div id="ref-WOS:000372305700009" class="csl-entry" role="listitem">
+Turner, A. M., Abplanalp, M. J., &amp; Kaiser, R. I. (2016). PROBING THE CARBON-PHOSPHORUS BOND COUPLING IN LOW-TEMPERATURE PHOSPHINE (PH&lt;sub&gt;3&lt;/sub&gt;)-METHANE (CH&lt;sub&gt;4&lt;/sub&gt;) INTERSTELLAR ICE ANALOGUES. <em>ASTROPHYSICAL JOURNAL</em>, <em>819</em>(2). <a href="https://doi.org/10.3847/0004-637X/819/2/97">https://doi.org/10.3847/0004-637X/819/2/97</a>
+</div>
+<div id="ref-WOS:000422758300004" class="csl-entry" role="listitem">
+Turner, A. M., Abplanalp, M. J., Blair, T. J., Dayuha, R., &amp; Kaiser, R. I. (2018). An infrared spectroscopic study toward the formation of alkylphosphonic acids and their precursors in extraterrestrial environments. <em>ASTROPHYSICAL JOURNAL SUPPLEMENT SERIES</em>, <em>234</em>(1). <a href="https://doi.org/10.3847/1538-4365/aa9183">https://doi.org/10.3847/1538-4365/aa9183</a>
+</div>
+<div id="ref-WOS:000396121200027" class="csl-entry" role="listitem">
+Tzompa-Sosa, Z. A., Mahieu, E., Franco, B., Keller, C. A., Turner, A. J., Helmig, D., et al. (2017). Revisiting global fossil fuel and biofuel emissions of ethane. <em>JOURNAL OF GEOPHYSICAL RESEARCH-ATMOSPHERES</em>, <em>122</em>(4), 2493–2512. <a href="https://doi.org/10.1002/2016JD025767">https://doi.org/10.1002/2016JD025767</a>
+</div>
+<div id="ref-WOS:000360649700027" class="csl-entry" role="listitem">
+Worden, J. R., Turner, A. J., Bloom, A., Kulawik, S. S., Liu, J., Lee, M., et al. (2015). Quantifying lower tropospheric methane concentrations using GOSAT near-IR and TES thermal IR measurements. <em>ATMOSPHERIC MEASUREMENT TECHNIQUES</em>, <em>8</em>(8), 3433–3445. <a href="https://doi.org/10.5194/amt-8-3433-2015">https://doi.org/10.5194/amt-8-3433-2015</a>
+</div>
+<div id="ref-WOS:000953028200001" class="csl-entry" role="listitem">
+Yu, X., Millet, D. B., Henze, D. K., Turner, A. J., Delgado, A. L., Bloom, A. A., &amp; Sheng, J. (2023). A high-resolution satellite-based map of global methane emissions reveals missing wetland, fossil fuel, and monsoon sources. <em>ATMOSPHERIC CHEMISTRY AND PHYSICS</em>, <em>23</em>(5), 3325–3346. <a href="https://doi.org/10.5194/acp-23-3325-2023">https://doi.org/10.5194/acp-23-3325-2023</a>
+</div>
+<div id="ref-WOS:001034178000001" class="csl-entry" role="listitem">
+Zhang, C., Wang, J., Turner, A. M., Marks, J. H., Chandra, S., Fortenberry, R. C., &amp; Kaiser, R. I. (2023). On the formation of vinylamine (c&lt;sub&gt;2&lt;/sub&gt;h&lt;sub&gt;3&lt;/sub&gt;NH&lt;sub&gt;2&lt;/sub&gt;) in interstellar ice analogs. <em>ASTROPHYSICAL JOURNAL</em>, <em>952</em>(2). <a href="https://doi.org/10.3847/1538-4357/acd451">https://doi.org/10.3847/1538-4357/acd451</a>
+</div>
+<div id="ref-WOS:001009737900023" class="csl-entry" role="listitem">
+Zhang, C., Zhu, C., Turner, A. M., Antonov, I. O., Garcia, A. D., Meinert, C., et al. (2023). Processing of methane and acetylene ices by galactic cosmic rays and implications to the color diversity of kuiper belt objects. <em>SCIENCE ADVANCES</em>, <em>9</em>(22). <a href="https://doi.org/10.1126/sciadv.adg6936">https://doi.org/10.1126/sciadv.adg6936</a>
+</div>
+<div id="ref-WOS:000338836800038" class="csl-entry" role="listitem">
+Zhou, L., Maity, S., Abplanalp, M., Turner, A., &amp; Kaiser, R. I. (2014). ON THE RADIOLYSIS OF ETHYLENE ICES BY ENERGETIC ELECTRONS AND IMPLICATIONS TO THE EXTRATERRESTRIAL HYDROCARBON CHEMISTRY. <em>ASTROPHYSICAL JOURNAL</em>, <em>790</em>(1). <a href="https://doi.org/10.1088/0004-637X/790/1/38">https://doi.org/10.1088/0004-637X/790/1/38</a>
+</div>
+<div id="ref-WOS:000422867300007" class="csl-entry" role="listitem">
+Zhu, C., Turner, A. M., Abplanalp, M. J., &amp; Kaiser, R. I. (2018). Formation and high-order carboxylic acids (RCOOH) in interstellar analogous ices of carbon dioxide (CO&lt;sub&gt;2&lt;/sub&gt;) and methane(CH&lt;sub&gt;4&lt;/sub&gt;). <em>ASTROPHYSICAL JOURNAL SUPPLEMENT SERIES</em>, <em>234</em>(1). <a href="https://doi.org/10.3847/1538-4365/aa9f28">https://doi.org/10.3847/1538-4365/aa9f28</a>
+</div>
+</div></section></div></div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><img src="../..\img/Caltech_Logo.png" class="img-fluid"> <br> Lead Institution</p>
+</div>   
+    <div class="nav-footer-center">
+<img src="../..\img/jpl_logo.png" class="img-fluid"> <br>
+<p>
+Instrument and Mission Management
+</p>
+</div>
+    <div class="nav-footer-right">
+<p><img src="../..\img/lockheed_logo.png" class="img-fluid"><br> Spacecraft and Mission Operations</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

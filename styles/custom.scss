@@ -399,6 +399,65 @@ body {
         background-color: white !important; //override ojs
       }
     }
+    
+  }
+
+  /* ---------- Spectra Story block -------------------------- */
+  .spectra-plots{
+
+    padding-left: 100px;
+
+    input[type="checkbox"] {
+      transform: scale(1.5);   
+      margin-left: 6px;       
+    }
+
+    .container{
+      max-width: 1800px !important; // override bootstrap container size
+    }
+    .grid { 
+      align-items: stretch; 
+
+      .samples-filter{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center; 
+        gap: 20px;
+      
+        form{
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 1rem;                  
+          max-width: 800px;           
+        }
+      }
+
+      .controls{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;  
+        align-self: stretch;
+
+        .observablehq{
+          margin-bottom: 40px;
+        }
+      }
+
+      font-size: var(--label-fs);
+
+      form div[style] {
+        font-family: var(--bs-body-font-family) !important;
+        font-size: var(--label-fs) !important;  
+        font-weight: 400 !important;
+      }
+
+      form output{
+        font-family: var(--bs-body-font-family) !important;
+        font-size: calc(var(--label-fs) * 0.9) !important;
+      }
+    }
   }
 
   #listing-blog-list {

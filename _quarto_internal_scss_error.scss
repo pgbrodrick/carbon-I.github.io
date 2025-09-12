@@ -16,8 +16,6 @@
 
 
 
-
-
 // quarto-scss-analysis-annotation { "origin": "'use' section from Quarto" }
 
 
@@ -33,8 +31,6 @@
 
 
 
-
-
 @use "sass:color" as quarto-color;
 @use "sass:map" as quarto-map;
 @use "sass:math" as quarto-math;
@@ -45,8 +41,6 @@
 
 
 // quarto-scss-analysis-annotation { "origin": "'functions' section from format" }
-
-
 
 
 
@@ -628,8 +622,6 @@ $theme-name: null !default;
 
 
 
-
-
 @function colorToRGB($color) {
   @return "rgb(" + red($color) + ", " + green($color) + ", " + blue($color) +
     ")";
@@ -1133,15 +1125,18 @@ body {
     background-color: black;    
     padding: 0.4rem 1.2rem;
 
+    .navbar-container{
+      height: 100%; 
+    }
+
     .navbar-nav {
       background: #000;          
     }
 
     .navbar-brand-container {
       overflow: hidden;
-      height: 100%;        // match .navbar height
+      height: 100%;
       max-width: 337px;
-
 
       .navbar-brand {
         height: 100%;     
@@ -1152,7 +1147,7 @@ body {
 
       .navbar-logo {
         max-height: none;  // removes bootstrap 24px constraint
-        height: auto;         // scale with parent
+        height: auto;      // scale with parent
         max-width: 100%;
         padding-left: 2rem;
         transition: all 0.5s ease;
@@ -1179,6 +1174,7 @@ body {
     }
 
     .nav-link {
+
       &.active {
         border-bottom: 2px solid $brand-orange; // underline if active
       }
@@ -1188,16 +1184,21 @@ body {
       color: $brand-orange;
     }
 
-    .dropdown-menu .dropdown-item {
-      background-color: black;
-      color: white;
-      &:hover {
-        color: $brand-orange;
+    .dropdown-menu{ 
+    
+      .dropdown-item {
+        background-color: black;
+        color: white;
+        &:hover {
+          color: $brand-orange;
+        }
       }
     }
-    #quarto-search svg{
-      &:hover {
-        color: $brand-orange !important;
+    #quarto-search{ 
+      svg{
+        &:hover {
+          color: $brand-orange !important;
+        }
       }
     }
   }
@@ -1426,6 +1427,56 @@ body {
 
       svg{
         background-color: white !important; //override ojs
+      }
+    }
+    
+  }
+
+  /* ---------- Spectra Story block -------------------------- */
+  .spectra-plots{
+
+    input[type="checkbox"] {
+      transform: scale(1.5);   
+      margin-left: 6px;       
+    }
+
+    .container{
+      max-width: 1800px !important; // override bootstrap container size
+    }
+    .grid { 
+      align-items: stretch; 
+
+      .samples-filter{
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center;
+        text-align: left;    
+        gap: 20px'
+      }
+
+      .controls{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;  
+        align-self: stretch;
+
+        .observablehq{
+          margin-bottom: 40px;
+        }
+      }
+
+      font-size: var(--label-fs);
+
+      form div[style] {
+        font-family: var(--bs-body-font-family) !important;
+        font-size: var(--label-fs) !important;  
+        font-weight: 400 !important;
+      }
+
+      form output{
+        font-family: var(--bs-body-font-family) !important;
+        font-size: calc(var(--label-fs) * 0.9) !important;
       }
     }
   }
@@ -1778,7 +1829,8 @@ body{
     }
 
     .article-contents{
-      padding: 0rem 2rem;;
+      padding-left: 2rem;
+      padding-right: 2rem ;
     }
   }
 
@@ -2145,8 +2197,6 @@ $btn-code-copy-color-active: if(
   $link-color,
   #0d6efd
 ) !default;
-
-
 
 
 
@@ -3957,6 +4007,8 @@ $pre-bg:                            $code-bg  !default;
 $pre-color:                         $body-emphasis-color !default;
 $pre-line-height:                   $line-height-base !default;
 $font-family-base: Roboto;
+$margin-top: 0em;
+$margin-bottom: 0em;
 $grid-sidebar-width: 0px;
 $grid-margin-width: 150px;
 $grid-body-width: 1500px;
@@ -3973,11 +4025,7 @@ $grid-body-width: 1500px;
 
 
 
-
-
 // quarto-scss-analysis-annotation { "origin": "'mixins' section from format" }
-
-
 
 
 
@@ -4556,8 +4604,6 @@ $grid-body-width: 1500px;
     border-radius: 10px;
   }
 }
-
-
 
 
 @mixin body-secondary {
@@ -5916,8 +5962,6 @@ $grid-default-toc-mid-body: minmax(
 
 
 // quarto-scss-analysis-annotation { "origin": "'rules' section from format" }
-
-
 
 
 
@@ -10111,130 +10155,6 @@ div.quarto-about-broadside {
       border: none;
     }
   }
-}
-
-
-// Tippy customizations
-
-.tippy-box[data-theme~="quarto"] {
-  background-color: $body-bg;
-  border: solid $border-width $border-color;
-  border-radius: $border-radius;
-  color: $body-color;
-  font-size: $font-size-sm;
-}
-.tippy-box[data-theme~="quarto"] > .tippy-backdrop {
-  background-color: $body-bg;
-}
-.tippy-box[data-theme~="quarto"] > .tippy-arrow:after,
-.tippy-box[data-theme~="quarto"] > .tippy-svg-arrow:after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-}
-.tippy-box[data-theme~="quarto"] > .tippy-arrow:after {
-  border-color: transparent;
-  border-style: solid;
-}
-
-.tippy-box[data-placement^="top"] > .tippy-arrow:before {
-  bottom: -6px;
-}
-.tippy-box[data-placement^="bottom"] > .tippy-arrow:before {
-  top: -6px;
-}
-.tippy-box[data-placement^="right"] > .tippy-arrow:before {
-  left: -6px;
-}
-.tippy-box[data-placement^="left"] > .tippy-arrow:before {
-  right: -6px;
-}
-
-.tippy-box[data-theme~="quarto"][data-placement^="top"] > .tippy-arrow:before {
-  border-top-color: $body-bg;
-}
-.tippy-box[data-theme~="quarto"][data-placement^="top"] > .tippy-arrow:after {
-  border-top-color: $border-color;
-  border-width: 7px 7px 0;
-  top: 17px;
-  left: 1px;
-}
-.tippy-box[data-theme~="quarto"][data-placement^="top"]
-  > .tippy-svg-arrow
-  > svg {
-  top: 16px;
-}
-.tippy-box[data-theme~="quarto"][data-placement^="top"]
-  > .tippy-svg-arrow:after {
-  top: 17px;
-}
-.tippy-box[data-theme~="quarto"][data-placement^="bottom"]
-  > .tippy-arrow:before {
-  border-bottom-color: $body-bg;
-  bottom: 16px;
-}
-.tippy-box[data-theme~="quarto"][data-placement^="bottom"]
-  > .tippy-arrow:after {
-  border-bottom-color: $border-color;
-  border-width: 0 7px 7px;
-  bottom: 17px;
-  left: 1px;
-}
-.tippy-box[data-theme~="quarto"][data-placement^="bottom"]
-  > .tippy-svg-arrow
-  > svg {
-  bottom: 15px;
-}
-.tippy-box[data-theme~="quarto"][data-placement^="bottom"]
-  > .tippy-svg-arrow:after {
-  bottom: 17px;
-}
-.tippy-box[data-theme~="quarto"][data-placement^="left"] > .tippy-arrow:before {
-  border-left-color: $body-bg;
-}
-.tippy-box[data-theme~="quarto"][data-placement^="left"] > .tippy-arrow:after {
-  border-left-color: $border-color;
-  border-width: 7px 0 7px 7px;
-  left: 17px;
-  top: 1px;
-}
-.tippy-box[data-theme~="quarto"][data-placement^="left"]
-  > .tippy-svg-arrow
-  > svg {
-  left: 11px;
-}
-.tippy-box[data-theme~="quarto"][data-placement^="left"]
-  > .tippy-svg-arrow:after {
-  left: 12px;
-}
-.tippy-box[data-theme~="quarto"][data-placement^="right"]
-  > .tippy-arrow:before {
-  border-right-color: $body-bg;
-  right: 16px;
-}
-.tippy-box[data-theme~="quarto"][data-placement^="right"] > .tippy-arrow:after {
-  border-width: 7px 7px 7px 0;
-  right: 17px;
-  top: 1px;
-  border-right-color: $border-color;
-}
-.tippy-box[data-theme~="quarto"][data-placement^="right"]
-  > .tippy-svg-arrow
-  > svg {
-  right: 11px;
-}
-.tippy-box[data-theme~="quarto"][data-placement^="right"]
-  > .tippy-svg-arrow:after {
-  right: 12px;
-}
-.tippy-box[data-theme~="quarto"] > .tippy-svg-arrow {
-  fill: $body-color;
-}
-.tippy-box[data-theme~="quarto"] > .tippy-svg-arrow:after {
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMCA2czEuNzk2LS4wMTMgNC42Ny0zLjYxNUM1Ljg1MS45IDYuOTMuMDA2IDggMGMxLjA3LS4wMDYgMi4xNDguODg3IDMuMzQzIDIuMzg1QzE0LjIzMyA2LjAwNSAxNiA2IDE2IDZIMHoiIGZpbGw9InJnYmEoMCwgOCwgMTYsIDAuMikiLz48L3N2Zz4=);
-  background-size: 16px 6px;
-  width: 16px;
-  height: 6px;
 }
 
 

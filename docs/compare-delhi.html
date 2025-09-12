@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>New Delhi air pollution in visible and NIR view</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./img/ci_icon.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-9219b85d7d3314ef594ae144cbd7b266.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-PE6RLP594L"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-PE6RLP594L', { 'anonymize_ip': true});
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
+
+
+<link rel="stylesheet" href="styles/custom.css">
+<link rel="stylesheet" href="styles/index-background.css">
+<meta property="og:title" content="New Delhi air pollution in visible and NIR view">
+<meta name="twitter:title" content="New Delhi air pollution in visible and NIR view">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./img/Logo-White2.png" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./team.html"> 
+<span class="menu-text">Team</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./science.html"> 
+<span class="menu-text">Science</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./publications.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-visual-stories" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Visual Stories</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-visual-stories">    
+        <li>
+    <a class="dropdown-item" href="./ch4_story.html">
+ <span class="dropdown-text">CH4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./clouds.html">
+ <span class="dropdown-text">Clouds</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./spectra.html">
+ <span class="dropdown-text">Surface Spectra</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./news.html"> 
+<span class="menu-text">News</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Carbon-I/"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+<!-- main -->
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">New Delhi air pollution in visible and NIR view</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<iframe frameborder="0" class="juxtapose" width="100%" height="2054" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=4e906ee6-68e4-11f0-bb24-0936e1cb08fb"></iframe>
+
+
+
+
+
+
+<!-- Navbar Scale Animation-->
+
+<script>
+
+    const nav = document.querySelector('.navbar');
+
+    
+
+    window.addEventListener('scroll', () => {
+
+      if (window.scrollY > 10) {
+
+        nav.classList.add('compact');
+
+      } else {
+
+        nav.classList.remove('compact');
+
+      }
+
+    });
+
+</script>
+
+
+
+<!-- For About Page Layout-->
+
+<script>
+
+  document.addEventListener("DOMContentLoaded", () => {
+
+    const titleBlock = document.querySelector(".quarto-title-block");
+
+    const image = document.querySelector(".about-image");
+
+
+
+    const title = document.querySelector('.quarto-title');
+
+    const logos = document.querySelector('.about-links');
+
+
+
+    //place images into titleBlock area
+
+    if (titleBlock && image) {
+
+    titleBlock.insertBefore(image, titleBlock.firstChild);
+
+    }
+
+
+
+    //place logos into title area
+
+    if (title && logos) {
+
+    title.appendChild(logos);
+
+    }
+
+  });
+
+</script>
+
+
+
+<!-- Only add references if there is a bibliography-->
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const refs = document.getElementById("refs");
+
+      if (!refs) return;
+
+    
+
+      document.querySelectorAll('#quarto-appendix').forEach(el => el.remove());
+
+
+
+      const wrapper = document.createElement("div");
+
+      wrapper.className = "references-wrapper";
+
+    
+
+      const container = document.createElement("div");
+
+      container.className = "container about-references";
+
+    
+
+      const heading = document.createElement("h1");
+
+      heading.textContent = "References";
+
+    
+
+      container.appendChild(heading);
+
+      container.appendChild(refs);
+
+      wrapper.appendChild(container);
+
+    
+
+      const footerBanner = document.querySelector(".footer");
+
+      if (footerBanner && footerBanner.parentNode) {
+
+        footerBanner.parentNode.insertBefore(wrapper, footerBanner);
+
+      } else {
+
+        document.body.appendChild(wrapper);
+
+      }
+
+    });
+
+</script>
+
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><img src=".\img/Caltech_Logo.png" class="img-fluid"> <br> Lead Institution</p>
+</div>   
+    <div class="nav-footer-center">
+<img src=".\img/jpl_logo.png" class="img-fluid"> <br>
+<p>
+Instrument and Mission Management
+</p>
+</div>
+    <div class="nav-footer-right">
+<p><img src=".\img/lockheed_logo.png" class="img-fluid"><br> Spacecraft and Mission Operations</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
