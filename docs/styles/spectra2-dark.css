@@ -1,0 +1,74 @@
+/* Dark theme for spectra2.qmd page */
+
+/* Global page styling */
+body, html {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+/* Container and layout elements */
+.container, .about, .spectra-plots, .grid {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+/* Observable input controls */
+.oi-select, .oi-range, .oi-slider, .oi-input, .oi-toggle, .oi-checkbox {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+
+.oi-select option {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+.oi-select label, .oi-range label, .oi-slider label, .oi-input label, .oi-toggle label, .oi-checkbox label {
+    color: #ffffff !important;
+}
+
+/* Range slider components */
+.range-slider, .range-slider input {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+/* Plot and legend elements */
+.plot-swatches, .plot-legend-item, .plot-legend-label, .plot-legend-title {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+.plot-axis-label, .plot-axis-title, .plot-tick-label {
+    color: #ffffff !important;
+}
+
+/* Ensure no white backgrounds override our styling */
+* {
+    background-color: transparent;
+}
+
+/* Specific containers that should be black */
+body, html, .container, .about, .spectra-plots, .grid, .g-col-12, .g-col-9 {
+    background-color: #000000 !important;
+}
+
+/* Text elements */
+h1, h2, h3, h4, h5, h6, p, div, span {
+    color: #ffffff !important;
+}
+
+/* Make sure form elements are properly styled */
+form, fieldset, legend {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+
+/* Any remaining input elements */
+input, select, textarea {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+}
