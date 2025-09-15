@@ -17,13 +17,9 @@ format:
 
 
 ::::: {.container}
-:::: {.about .px-md-7 .py-3 style="border-bottom: 1px solid #ffffff;"} 
-
-
-::::
 :::::
 ::::: {.spectra-plots}
-::: {.grid .py-3}
+::: {.grid .py-1}
 
 ```{ojs}
 import { rangeInput as rangeInput } from '@mootari/range-slider'
@@ -61,7 +57,7 @@ categorizedData = rawData.map(d => {
 categories = Array.from(new Set(categorizedData.map(d => d.category)));
 
 viewof categorySel = Inputs.select(categories, {
-  label: "Sample Category",
+  label: " ",
   value: "Minerals"
 });
 sampleOptions = Array.from(categoryLookup.keys()).filter(
@@ -128,6 +124,17 @@ html`<style>
     --label-width: ${labelWidth}px !important;
     --input-width: ${inputWidth}px !important;
   }
+  /* Reduce spacing around category selection */
+  .samples-filter {
+    margin-bottom: 0.5rem !important;
+    padding-bottom: 0 !important;
+  }
+  .g-col-12.samples-filter {
+    margin-bottom: 0.5rem !important;
+  }
+  .grid {
+    row-gap: 0.5rem !important;
+  }
   /* Inline plot and legend horizontally */
   .spectra-plot-legend-container {
     display: flex;
@@ -135,6 +142,7 @@ html`<style>
     align-items: flex-start;
     gap: 2em;
     width: 100%;
+    margin-top: 0.5rem !important;
   }
   .plot-swatches, [class*="-swatches-wrap"], [class*="-swatches"] {
     position: static !important;
@@ -186,11 +194,16 @@ html`<style>
   .plot-axis-label, .plot-axis-title, .plot-tick-label {
     color: #ffffff !important;
   }
+  /* Reduce spacing around plot container */
+  .plot-container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
 </style>`
 ```
 
 :::
-::: {.g-col-9}
+::: {.g-col-9 .plot-container}
 ```{ojs}
 {
   if (filteredData.length < 1) {
@@ -337,8 +350,8 @@ html`<style>
       <div>${p}</div>
       <div>${legendHTML}</div>
     </div>
-    <div style="text-align:center; font-size:${fontPx * 1.1}px; margin-top: 0.5em;">${xLabel}</div>
-    <div style="display: flex; gap: 2rem; align-items: center; justify-content: center; margin-top: 2rem;">
+    <div style="text-align:center; font-size:${fontPx * 1.1}px; margin-top: 0.25em;">${xLabel}</div>
+    <div style="display: flex; gap: 2rem; align-items: center; justify-content: center; margin-top: 1rem;">
       <div style="font-size:1.5em;">Spectral Range: ${viewof slider}</div>
       <div style="font-size: 1.5em;">Spectral Sampling Interval (nm): ${viewof resolutionSel}</div>
     </div>`;
@@ -346,4 +359,8 @@ html`<style>
 
 ```
 :::
+:::::
+
+::::: {.bottom-spacing}
+<div style="height: 4rem; background-color: #000000;"></div>
 :::::

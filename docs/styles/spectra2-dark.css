@@ -12,6 +12,32 @@ body, html {
     color: #ffffff !important;
 }
 
+/* Reduce spacing around layout elements */
+.spectra-plots {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+.grid {
+    row-gap: 0.5rem !important;
+}
+
+.samples-filter {
+    margin-bottom: 0.5rem !important;
+    padding-bottom: 0 !important;
+}
+
+.plot-container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Bottom spacing */
+.bottom-spacing {
+    background-color: #000000 !important;
+    padding: 2rem 0 !important;
+}
+
 /* Observable input controls */
 .oi-select, .oi-range, .oi-slider, .oi-input, .oi-toggle, .oi-checkbox {
     background-color: #000000 !important;
@@ -42,6 +68,23 @@ body, html {
 
 .plot-axis-label, .plot-axis-title, .plot-tick-label {
     color: #ffffff !important;
+}
+
+/* Observable Plot styling */
+svg {
+    background-color: #000000 !important;
+}
+
+g text {
+    fill: #ffffff !important;
+}
+
+.plot-axis line, .plot-grid line {
+    stroke: #ffffff !important;
+}
+
+.plot-axis path {
+    stroke: #ffffff !important;
 }
 
 /* Ensure no white backgrounds override our styling */
