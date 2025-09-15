@@ -9,6 +9,7 @@ website:
   open-graph: true
   google-analytics: "G-PE6RLP594L"
   favicon: img/ci_icon.png
+  search: false
   navbar:
     logo: "/img/Logo-White2.png"
   page-footer:
