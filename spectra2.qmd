@@ -14,18 +14,10 @@ format:
     code-tools: true
 ---
 
-:::: {.hero-small .hero-gradient .hero-clouds}
-::: {.container}
-# **Surface Spectra**
-:::
-::::
-
 
 ::::: {.container}
 :::: {.about .px-md-7 .py-3 style="border-bottom: 1px solid #C8C7C7;"} 
-# While the core mission science focuses on observations of atmospheric composition, the mission will also observe surface properties at unmatched spectral resolutions.  
 
-Carbon-I mission is designed as a wide-swath mapping mission, collecting shortwave infrared imaging spectroscopy data. This will provide new insights into a wide range of areas including critical mineral distributions, vegetation stress, and pollution. Carbon-I’s higher spectral resolution in the shortwave infrared compared to existing missions (e.g., EMIT) allows clearer discrimination of minerals such as lithium-bearing hectorite from similar materials, offering significant value for scientific analysis and potential resource exploration. The Carbon-I team has taken surface reflectance measurements with the Carbon-I Demonstration Unit in the laboratory - check them out below with this tool which allows you to compare these highly resolved spectral data with coarser spectral resolutions to see the power of Carbon-I's surface spectra.
 
 ::::
 :::::
@@ -33,7 +25,8 @@ Carbon-I mission is designed as a wide-swath mapping mission, collecting shortwa
 ::: {.grid .py-3}
 
 ```{ojs}
-import { rangeSlider as rangeSlider } from '@mootari/range-slider'
+import { rangeInput as rangeInput } from '@mootari/range-slider'
+import {slider as sliderInput} from "@jashkenas/inputs"
 ```
 
 ```{ojs}
@@ -41,62 +34,6 @@ rawData =  FileAttachment("data/rfl_lowpass_shaped_v2.csv").csv({typed: true});
 ```
 
 ::: {.g-col-12 .samples-filter}
-```{ojs}
-viewof categorySel = Inputs.checkbox(categories, {
-  label: "Sample Categories", 
-  value: ["Minerals"]}
-);
-sampleOptions = Array.from(categoryLookup.keys()).filter(
-  s => samples.includes(s) && categorySel.includes(categoryLookup.get(s).category)
-);
-```
-
-```{ojs}
-viewof sampleSel = Inputs.checkbox(sampleOptions, { value: sampleOptions });
-viewof samplePanel = categorySel.length
-  ? html`<details class="sample-drop" open>
-           <summary style="color:#000;">Samples</summary>
-           ${viewof sampleSel}
-         </details>`
-  : html``;
-```
-:::
-
-::: {.g-col-3 .px-5 .controls}
-
-```{ojs}
-fmt = d3.format(".2f");
-
-viewof slider = rangeSlider({
-  min: d3.extent(rawData, d => d.wavelength)[0],
-  max: d3.extent(rawData, d => d.wavelength)[1],
-  step: 0.7,
-  format: d => `${fmt(d)} nm`,
-  title: 'Select a range',
-})
-
-minWL = slider[0];
-maxWL = slider[1];
-
-xMin = d3.min(rawData, d => d.wavelength);
-xMax = d3.max(rawData, d => d.wavelength);
-```
-
-```{ojs}
-viewof normalize = Inputs.toggle({
-  label: "Normalize 0-1 (per sample)",
-  value: false
-})
-```
-
-```{ojs}
-viewof resolutionSel = Inputs.range([0.7, 15.4], {step: 0.7, value: 0.7, label: "Resolution (nm)"})
-```
-
-```{ojs}
-viewof windowSel = Inputs.range([1, 15], {step: 1, value: 1, label: "Spectral Averaging Window"})
-```
-
 ```{ojs}
 categoryLookup = new Map([
   ["Hectorite", {category: "Minerals", color: "#4daf4a"}],  
@@ -108,29 +45,66 @@ categoryLookup = new Map([
   ["Oak leaf, new growth", {category: "Vegetation", color: "#3a8040"}],  
   ["Oak leaf, one year old", {category: "Vegetation", color: "#ffdd57"}],
   ["Oak leaf, scenesced", {category: "Vegetation", color: "#1b9e77"}],
-  ["Maple Leaf", {category: "Vegetation", color: "#7570b3"}],
-
-  ["HDPE bottle",  {category: "Plastics", color: "#1f78b4"}], 
-  ["HDPE film", {category: "Plastics", color: "#33a02c"}], 
-  ["PVC", {category: "Plastics", color: "#6a3d9a"}],
-  ["Polysterene", {category: "Plastics", color: "#b15928"}]   
+  ["Maple Leaf", {category: "Vegetation", color: "#7570b3"}]
 ]);
+
+samples = d3.sort(d3.group(rawData, d => d.sample).keys());
+categorizedData = rawData.map(d => {
+  const info = categoryLookup.get(d.sample);
+  return {
+    ...d,
+    category: info ? info.category : undefined,
+    color: info ? info.color : undefined
+  };
+}).filter(d => d.category !== undefined);
+categories = Array.from(new Set(categorizedData.map(d => d.category)));
+
+viewof categorySel = Inputs.select(categories, {
+  label: "Sample Category",
+  value: "Minerals"
+});
+sampleOptions = Array.from(categoryLookup.keys()).filter(
+  s => samples.includes(s) && categorySel.includes(categoryLookup.get(s).category)
+);
 ```
 
 ```{ojs}
-samples = d3.sort(d3.group(rawData, d => d.sample).keys());
-
-categorizedData = rawData.map(d => {
-  const info = categoryLookup.get(d.sample)
-  return {
-    ...d,
-    category : info.category,  
-    color : info.color               
-  };
-});
-
-categories = Array.from(new Set(categorizedData.map(d => d.category)));
+sampleSel = sampleOptions;
 ```
+:::
+
+```{ojs}
+fmt = d3.format(".1f");
+viewof slider = rangeInput({
+  min: d3.extent(rawData, d => d.wavelength)[0],
+  max: d3.extent(rawData, d => d.wavelength)[1],
+  step: 0.7
+})
+minWL = slider[0];
+maxWL = slider[1];
+xMin = d3.min(rawData, d => d.wavelength);
+xMax = d3.max(rawData, d => d.wavelength);
+normalize = true
+// viewof normalize = Inputs.toggle({
+//   label: "Normalize",
+//   value: true
+// });
+//viewof resolutionSel = Inputs.range([0.7, 15.4], {step: 0.7, value: 0.7})
+//viewof resolutionSel = Inputs.range([7, 154], {step: 1, value: 7, label: "Resolution (nm) x10"}); 
+// viewof resolutionSel = sliderInput({min: 0.7, max: 15.4, step: 0.7, value: 0.7}); 
+// resolutionSelVal = resolutionSel / 10
+```
+
+```{ojs}
+//viewof resolutionSel = Inputs.range([7, 154], {step: 1, value: 7, label: "Resolution (nm) x10"}); 
+viewof resolutionSel = Inputs.range([0.7, 15.4], {step: 0.7, value: 0.7, label: ""})
+```
+
+```{ojs}
+//viewof windowSel = Inputs.range([1, 15], {step: 1, value: 1, label: "Spectral Averaging Window"})
+windowSel = 1
+```
+
 
 ```{ojs}
 filteredData = categorizedData.filter(
@@ -153,6 +127,37 @@ html`<style>
     --label-width: ${labelWidth}px !important;
     --input-width: ${inputWidth}px !important;
   }
+  /* Inline plot and legend horizontally */
+  .spectra-plot-legend-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2em;
+    width: 100%;
+  }
+  .plot-swatches, [class*="-swatches-wrap"], [class*="-swatches"] {
+    position: static !important;
+    margin-left: 0;
+    background: white;
+    z-index: 10;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 0.5em;
+    min-width: 180px;
+    max-width: 220px;
+  }
+  .plot-swatches .plot-legend-item, [class*="-swatches-wrap"] .plot-legend-item, [class*="-swatches"] .plot-legend-item {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    margin-bottom: 0.5em !important;
+  }
+  /* Hide Observable rangeSlider displayed text */
+  .range-slider-label {
+    display: none !important;
+  }
 </style>`
 ```
 
@@ -166,6 +171,7 @@ html`<style>
 
   const rowsBySample = d3.group(filteredData, d => d.sample);  // Map<sample, rows[]>
   const adjustedData = [];
+  //const resolutionSize = resolutionSel;
   const resolutionSize = Math.max(1, Math.round(resolutionSel / 0.7)); 
 
   for (const [sample, rows] of rowsBySample) {
@@ -203,7 +209,7 @@ html`<style>
   const xTickStart = Math.ceil(minWL / 20) * 20;
   const xTickEnd = Math.floor(maxWL / 20) * 20;
 
-  const yLabel = normalize ? "Normalized reflectance" : "Reflectance";
+  const yLabel = normalize ? "Normalized Reflectance" : "Reflectance";
   const xLabel = "Wavelength (nm)"
 
   const yStep = 0.05;
@@ -213,39 +219,41 @@ html`<style>
   const fmtVal = normalize ? d3.format(".3f") : d3.format(".4f");
 
   const p = Plot.plot({
-    width: plotWidth,
-    height: Math.round(plotWidth * (11/20)),
-    marginRight: 275,
+    // width: plotWidth,
+    width: 1800,
+    height: 650,
+    // height: Math.round(plotWidth * (11/20)),
+    marginRight: 100,
     marginLeft: 75,   
     marginTop: 45,   
     marginBottom: 40,
 
     x: {
-      label: xLabel,
+      // label: xLabel, // Remove label from axis config
+      label: " ",
       tickPadding: 10,
       tickRotate: rotate,
       domain: [minWL, maxWL],                                         
       ticks: d3.range(xTickStart, xTickEnd + 1, 30),
-      tickFormat: d3.format("d")                                    
+      tickFormat: d3.format("d"),
+      labelArrow: "none"
     },
     y: {
-      label: yLabel,
+      // label: yLabel, // Remove label from axis config
+      label: " ",
       grid: true,
       tickFormat: d => d.toFixed(2),
-      ticks: 20,
+      ticks: 10,
       nice: false,
-      tickPadding: 10,
-      domain: [0, maxY + 0.02]
+      tickPadding: 0,
+      domain: [0, maxY + 0.02],
+      labelArrow: "none"
     },
     color: {
       legend: true,
       domain: activeSamples,
-      range: activeSamples.map(s => categoryLookup.get(s).color),
-      inset: { 
-        anchor: "top-right", 
-        inset: 10, 
-        padding: 5 
-      }
+      range: activeSamples.map(s => categoryLookup.get(s).color)
+
     },
     style: { 
       fontSize: `${fontPx}px`, 
@@ -260,45 +268,52 @@ html`<style>
         title: "sample",
         strokeWidth: 5
       }),
-      Plot.dot(adjustedData, Plot.pointerX({
-        x: "wavelength",
-        y: "reflectance",
-        fill: "sample",
-        stroke: "white",
-        marker: "circle",
-        strokeWidth: 3,
-        r: 5
-      })),
-      Plot.text(adjustedData, Plot.pointerX({
-        px: "wavelength",
-        py: "reflectance",
-        dx: width * 0.5,
-        dy: -20,
-        frameAnchor: "top-left",
-        fontVariant: "tabular-nums",
-        fontSize: fontPx * 0.8,
-        text: d => `${d.sample}   λ ${fmt(d.wavelength)} nm    ${fmtVal(d.reflectance)}`
-      })),
-      Plot.text(adjustedData, Plot.selectLast({
-        x: "wavelength",
-        y: "reflectance",
-        z: "sample",
-        text: "sample",
-        textAnchor: "start",
-        fontSize: fontPx * 0.9,
-        dx: 3,
-        clip: false
-      }))
+
+
+
+
+      // Plot.dot(adjustedData, Plot.pointerX({
+      //   x: "wavelength",
+      //   y: "reflectance",
+      //   fill: "sample",
+      //   stroke: "white",
+      //   marker: "circle",
+      //   strokeWidth: 3,
+      //   r: 5
+      // })),
+      // Plot.text(adjustedData, Plot.pointerX({
+      //   px: "wavelength",
+      //   py: "reflectance",
+      //   dx: width * 0.5,
+      //   dy: -20,
+      //   frameAnchor: "top-left",
+      //   fontVariant: "tabular-nums",
+      //   fontSize: fontPx * 0.8,
+      //   text: d => `${d.sample}   λ ${fmt(d.wavelength)} nm    ${fmtVal(d.reflectance)}`
+      // })),
+  // Removed Plot.text(adjustedData, Plot.selectLast(...)) to eliminate right-side label
     ]
   });
   const swatches = p.querySelector('div[class*="-swatches-wrap"], div[class*="-swatches"], .plot-swatches');
+  let legendHTML = "";
   if (swatches) {
-    swatches.style.fontSize = `${fontPx * 0.6}px`;   
+    swatches.style.fontSize = `${fontPx * 0.8}px`;
+    legendHTML = swatches.outerHTML;
+    swatches.remove(); // Remove legend from plot container
   }
-  return p;
+  return html`
+    <div class="spectra-plot-legend-container" style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+      <div style="writing-mode: vertical-rl; transform: rotate(180deg); font-size:${fontPx * 1.1}px; margin-right: 1em;">${yLabel}</div>
+      <div>${p}</div>
+      <div>${legendHTML}</div>
+    </div>
+    <div style="text-align:center; font-size:${fontPx * 1.1}px; margin-top: 0.5em;">${xLabel}</div>
+    <div style="display: flex; gap: 2rem; align-items: center; justify-content: center; margin-top: 2rem;">
+      <div style="font-size:1.5em;">Spectral Range: ${viewof slider}</div>
+      <div style="font-size: 1.5em;">Spectral Sampling Interval (nm): ${viewof resolutionSel}</div>
+    </div>`;
 }
 
 ```
-:::
 :::
 :::::
