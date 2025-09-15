@@ -154,6 +154,18 @@ html`<style>
     align-items: center !important;
     margin-bottom: 0.5em !important;
   }
+  /* Increase font size for Sample Category dropdown and labels */
+  .spectra-plots .oi-select,
+  .spectra-plots .oi-select label,
+  .spectra-plots .oi-select option,
+  .spectra-plots select {
+    font-size: 1.5em !important;
+  }
+  /* Increase font size for Sample Category label */
+  .spectra-plots .samples-filter form label {
+    font-size: 1.5em !important;
+    white-space: nowrap !important;
+  }
   /* Hide Observable rangeSlider displayed text */
   .range-slider-label {
     display: none !important;
