@@ -17,9 +17,13 @@ format:
 
 
 ::::: {.container}
+:::: {.about .px-md-7 .py-3 style="border-bottom: 1px solid #ffffff;"} 
+
+
+::::
 :::::
 ::::: {.spectra-plots}
-::: {.grid .py-1}
+::: {.grid .py-3}
 
 ```{ojs}
 import { rangeInput as rangeInput } from '@mootari/range-slider'
@@ -33,16 +37,16 @@ rawData =  FileAttachment("data/rfl_lowpass_shaped_v2.csv").csv({typed: true});
 ::: {.g-col-12 .samples-filter}
 ```{ojs}
 categoryLookup = new Map([
-  ["Hectorite", {category: "Minerals", color: "#4daf4a"}],  
-  ["Magnesite", {category: "Minerals", color: "#e377c2"}], 
-  ["Saponite", {category: "Minerals", color: "#a65628"}], 
-  ["Sepiolite", {category: "Minerals", color: "#ff7f00"}], 
-  ["Vermiculite", {category: "Minerals", color: "#7f7f7f"}],  
+  ["Hectorite", {category: "Minerals", color: "#ffffff"}],  
+  ["Magnesite", {category: "Minerals", color: "#3a8040"}], 
+  ["Saponite", {category: "Minerals", color: "#ecbe73"}], 
+  ["Sepiolite", {category: "Minerals", color: "#ed8e64"}], 
+  ["Vermiculite", {category: "Minerals", color: "#7aa6d5"}],  
 
   ["Oak leaf, new growth", {category: "Vegetation", color: "#3a8040"}],  
-  ["Oak leaf, one year old", {category: "Vegetation", color: "#bfcc76"}],
-  ["Oak leaf, scenesced", {category: "Vegetation", color: "#ed8e64"}],
-  ["Maple Leaf", {category: "Vegetation", color: "#7aa6d5"}]
+  ["Oak leaf, one year old", {category: "Vegetation", color: "#ffdd57"}],
+  ["Oak leaf, scenesced", {category: "Vegetation", color: "#1b9e77"}],
+  ["Maple Leaf", {category: "Vegetation", color: "#7570b3"}]
 ]);
 
 samples = d3.sort(d3.group(rawData, d => d.sample).keys());
@@ -124,17 +128,6 @@ html`<style>
     --label-width: ${labelWidth}px !important;
     --input-width: ${inputWidth}px !important;
   }
-  /* Reduce spacing around category selection */
-  .samples-filter {
-    margin-bottom: 0.5rem !important;
-    padding-bottom: 0 !important;
-  }
-  .g-col-12.samples-filter {
-    margin-bottom: 0.5rem !important;
-  }
-  .grid {
-    row-gap: 0.5rem !important;
-  }
   /* Inline plot and legend horizontally */
   .spectra-plot-legend-container {
     display: flex;
@@ -142,7 +135,6 @@ html`<style>
     align-items: flex-start;
     gap: 2em;
     width: 100%;
-    margin-top: 0.5rem !important;
   }
   .plot-swatches, [class*="-swatches-wrap"], [class*="-swatches"] {
     position: static !important;
@@ -194,16 +186,11 @@ html`<style>
   .plot-axis-label, .plot-axis-title, .plot-tick-label {
     color: #ffffff !important;
   }
-  /* Reduce spacing around plot container */
-  .plot-container {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-  }
 </style>`
 ```
 
 :::
-::: {.g-col-9 .plot-container}
+::: {.g-col-9}
 ```{ojs}
 {
   if (filteredData.length < 1) {
@@ -350,8 +337,8 @@ html`<style>
       <div>${p}</div>
       <div>${legendHTML}</div>
     </div>
-    <div style="text-align:center; font-size:${fontPx * 1.1}px; margin-top: 0.25em;">${xLabel}</div>
-    <div style="display: flex; gap: 2rem; align-items: center; justify-content: center; margin-top: 1rem;">
+    <div style="text-align:center; font-size:${fontPx * 1.1}px; margin-top: 0.5em;">${xLabel}</div>
+    <div style="display: flex; gap: 2rem; align-items: center; justify-content: center; margin-top: 2rem;">
       <div style="font-size:1.5em;">Spectral Range: ${viewof slider}</div>
       <div style="font-size: 1.5em;">Spectral Sampling Interval (nm): ${viewof resolutionSel}</div>
     </div>`;
