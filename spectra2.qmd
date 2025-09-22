@@ -338,13 +338,19 @@ html`<style>
       <div>${legendHTML}</div>
     </div>
     <div style="text-align:center; font-size:${fontPx * 1.1}px; margin-top: 0.5em;">${xLabel}</div>
-    <div style="display: flex; gap: 2rem; align-items: center; justify-content: center; margin-top: 2rem;">
-      <div style="font-size:1.5em;">Spectral Range: ${viewof slider}</div>
-      <div style="font-size: 1.5em;">Spectral Sampling Interval (nm): ${viewof resolutionSel}</div>
-    </div>`;
+  `;
 }
-
 ```
+
+```{ojs}
+html`
+  <div style="display: flex; gap: 2rem; align-items: center; justify-content: center; margin-top: 2rem;">
+    <div style="font-size:1.5em;">Spectral Range: ${viewof slider}</div>
+    <div style="font-size: 1.5em;">Spectral Sampling Interval (nm): ${viewof resolutionSel}</div>
+  </div>
+`
+```
+
 :::
 :::::
 
